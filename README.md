@@ -1,3 +1,5 @@
 # BasicAvaloniaTemplate
 
-![Does exactly this](./Assets/overview.gif)
+<img src="Assets/overview.gif" width="400">
+
+Does exactly this. 
