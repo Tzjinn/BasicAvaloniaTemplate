@@ -1,0 +1,60 @@
+<Window
+    x:Class="BasicAvaloniaTemplate.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:BasicAvaloniaTemplate.ViewModels"
+    Title="RUI.Template"
+    Width="700"
+    Height="450"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:DataType="vm:MainWindowViewModel"
+    Background="#213363"
+    ExtendClientAreaChromeHints="PreferSystemChrome"
+    ExtendClientAreaTitleBarHeightHint="-1"
+    ExtendClientAreaToDecorationsHint="True"
+    Icon="/Assets/avalonia-logo.ico"
+    TransparencyLevelHint="AcrylicBlur"
+    mc:Ignorable="d">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid Margin="0,25,0,0" RowDefinitions="*,Auto">
+
+        <ContentControl
+            Margin="10,10,10,0"
+            Content="{Binding CurrentPage}"
+            CornerRadius="25" />
+
+        <StackPanel
+            Grid.Row="1"
+            Margin="7"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal"
+            Spacing="10">
+            <Button
+                Width="150"
+                HorizontalContentAlignment="Center"
+                x:CompileBindings="False"
+                Command="{Binding NavigateToPageOneCommand}"
+                Content="One" />
+            <Button
+                Width="150"
+                HorizontalContentAlignment="Center"
+                x:CompileBindings="False"
+                Command="{Binding NavigateToPageTwoCommand}"
+                Content="Two" />
+            <Button
+                Width="150"
+                HorizontalContentAlignment="Center"
+                x:CompileBindings="False"
+                Command="{Binding NavigateToPageThreeCommand}"
+                Content="Three" />
+        </StackPanel>
+    </Grid>
+
+</Window>
